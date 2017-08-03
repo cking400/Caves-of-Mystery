@@ -22,6 +22,10 @@ tests = [
     "n",    # cave entrance
     "d",    # bottom of the ladder
 
+    "bang pot", # bats fly off
+    "hit pot", # make noise
+    "e", # bat cave room
+
 
     # "s",    # Maze 1
     # "e",    # bottom of the ladder

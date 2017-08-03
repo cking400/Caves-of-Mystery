@@ -31,8 +31,10 @@ def parse(command,  thePlayer):
         Item.examine(thePlayer,  noun)
     elif verb == "insert" and noun != "":
         insert(thePlayer,  noun)
-    elif verb == "wind" and noun != "":
-        wind(thePlayer,  noun)
+    elif verb == "bang" and noun != "":
+        bang(thePlayer,  noun)
+    elif verb == "hit" and noun != "":
+        bang(thePlayer,  noun)
     elif verb == "open" and noun != "":
         open(thePlayer,  noun)    
     elif verb == "read" and noun != "":
