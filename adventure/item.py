@@ -66,13 +66,13 @@ def insert(thePlayer,  noun):
     else:
         outputText("You can't do that.")
 
-def wind(thePlayer,  noun):
-    if thePlayer.currentRoom == "Inside clock tower" and noun == "clock":
-        if items["bats"].location == "Long corridor":
-            items["bats"].location = "left tower"
-            outputText("The clock chimes deafeningly and something flies past.")
+def bang(thePlayer,  noun):
+    if thePlayer.currentRoom == "Bottom of the ladder" and noun == "pot":
+        if items["bats"].location == "Bat cave room":
+            items["bats"].location = "left cave"
+            outputText("Banging the pot makes a deafening noise and something flies past.")
         else:
-            outputText("The clock is fully wound.")
+            outputText("Banging the pot makes a lot of noise.")
     else:
         outputText("I don't understand.")
 
