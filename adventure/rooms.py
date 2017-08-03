@@ -40,6 +40,10 @@ def goHandler(thePlayer,  direction):
             thePlayer.currentRoom = "Cave opening"
             outputText("A horde of bats carries you out of the cave.")
             return (False)
+    if thePlayer.currentRoom == "Mine elevator" and direction == "d":
+        if items["cog"].location != "elevator":
+            outputText("The elevator seems to be broken and won't go down.")
+            return (False)
     return bool(True) # built in logic can continue if turn.
 
 
@@ -61,8 +65,14 @@ roomData = [
             '', 'Maze 1', 'Maze 2', 'Maze 4', '', ''], 
     ["Maze 4", "This is a winding passage with exists to the north and south.", 
             '', 'Maze 3', '', '', '', ''], 
-    ["Mine entrance", "You are in the entrance of an old abandoned mine. There is an elevator to the south.", 
-            'Maze 2', '', '', '', '', ''], 
+    ["Mine entrance", "You are in the entrance of an old abandoned mine. There is an elevator to the south and an entrance to the caves is north.", 
+            'Maze 2', 'Mine elevator', '', '', '', ''], 
+    ["Mine elevator", "You are in a rickity old mine elevator. You can go down in the elevator or north to the mine entrance.", 
+            'Mine entrance', '', '', '', '', 'Bottom of the mine elevator'],
+    ["Bottom of the mine elevator", "You are at the bottom of the mine. There is an elevator to go up.", 
+        '', '', '', '', 'Mine elevator', ''], 
+
+
 
     ["Landing", "You're at a landing on the stairs. There are exists to the east and west and stairs continue up and down.", '', '', 'Manufacturing room', 'Cafeteria', 'Landing on the third floor', 'Bottom of stairs'], 
     ["Cafeteria", "You're in a cafeteria. There is an exist to the east.", '', '', 'Landing', '', '', ''], 

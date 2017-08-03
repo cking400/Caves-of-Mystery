@@ -107,12 +107,12 @@ def type(thePlayer,  noun):
     else:
        outputText("You can't type on that.")
         
-def mount(thePlayer,  noun):
-    if thePlayer.currentRoom == "Computer room" and noun == "tape" and items["tape"].location == "Player":
-         items["tape"].location = "Tape mount"
-         outputText("You mount and thread the tape.")
+def fix(thePlayer,  noun):
+    if thePlayer.currentRoom == "Mine elevator" and noun == "elevator" and items["cog"].location == "Player":
+         items["cog"].location = "elevator"
+         outputText("You fix the elevator with the cog.")
     else:
-        outputText("You can't mount that.")
+        outputText("You can't fix that.")
            
 # This is the class for the mainframe computer in the adventure.
 class Computer(Item):
@@ -181,6 +181,9 @@ items['pot'] = Item("pot",  "An old mettle pot",  "Cave entrance") # needs to be
 
 items['terminal'] = Item("terminal",  "An old broken computer terminal",  "Bat cave room",  details="It looks beyond repair.")
 items['cog'] = Item("cog",  "An old rusty cog",  "Under terminal")
+
+items['coal'] = Item("coal",  "A chunck of coal",  "Bottom of the mine elevator")
+
 
 items['machine'] = Item("machine",  "A vending machine with candy",  "Cafeteria",  details="The label on the machine says to insert a coin.",  canTake="n")
 items['clock'] = Item("clock",  "The tower's clock works",  "Inside clock tower",  details="There is a large handle for winding the clock.",  canTake="n")

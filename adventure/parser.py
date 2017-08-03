@@ -43,8 +43,8 @@ def parse(command,  thePlayer):
         kick(thePlayer,  noun)
     elif verb == "type" and noun != "":
         type(thePlayer,  noun)
-    elif verb == "mount" and noun != "":
-        mount(thePlayer,  noun)
+    elif verb == "fix" and noun != "":
+        fix(thePlayer,  noun)
     elif verb == "eat" and noun != "":
         pass
     elif verb == "start" and noun != "":
