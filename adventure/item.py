@@ -44,9 +44,9 @@ class Item:
                 items[noun].drop(thePlayer,  noun)
 
 def takeHandler(thePlayer,  noun):
-    if noun == "terminal" and items['terminal'].location == "Manufacturing room" and thePlayer.currentRoom == "Manufacturing room" and items['coin'].location == "Under terminal":
-        outputText("You find a coin under the terminal.")
-        items['coin'].location = "Manufacturing room"
+    if noun == "terminal" and items['terminal'].location == "Bat cave room" and thePlayer.currentRoom == "Bat cave room" and items['cog'].location == "Under terminal":
+        outputText("You find a cog under the terminal.")
+        items['cog'].location = "Bat cave room"
     return bool(True)
 
 def dropHandler(thePlayer,  noun):
@@ -179,8 +179,9 @@ items['bats'] = Item("bats",  "A horde of bats",  "Bat cave room",  canTake="n")
 items['spoon'] = Item("spoon",  "A large mettle spoon",  "Cave entrance") # needs to be in kitchen
 items['pot'] = Item("pot",  "An old mettle pot",  "Cave entrance") # needs to be in stove
 
-items['terminal'] = Item("terminal",  "An old broken computer terminal",  "Manufacturing room",  details="It looks beyond repair.")
-items['coin'] = Item("coin",  "A coin from the Underground Empire",  "Under terminal")
+items['terminal'] = Item("terminal",  "An old broken computer terminal",  "Bat cave room",  details="It looks beyond repair.")
+items['cog'] = Item("cog",  "An old rusty cog",  "Under terminal")
+
 items['machine'] = Item("machine",  "A vending machine with candy",  "Cafeteria",  details="The label on the machine says to insert a coin.",  canTake="n")
 items['clock'] = Item("clock",  "The tower's clock works",  "Inside clock tower",  details="There is a large handle for winding the clock.",  canTake="n")
 items['desk'] = Item("desk",  "An old desk",  "East end of corridor",  details="The desk has a drawer.",  canTake="n")

@@ -25,6 +25,9 @@ tests = [
     "bang pot", # bats fly off
     "hit pot", # make noise
     "e", # bat cave room
+    "take terminal",
+    "take cog",
+    "drop terminal",
 
 
     # "s",    # Maze 1
