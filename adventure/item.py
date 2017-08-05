@@ -50,21 +50,8 @@ def takeHandler(thePlayer,  noun):
     return bool(True)
 
 def dropHandler(thePlayer,  noun):
-    if thePlayer.currentRoom == "Damp cellar" and noun == "candy":
-        items['rats'].description = "Group of sleeping rats"
-        items['candy'].location = 'eaten'
-        outputText("The rats eat the candy and fall asleep.")
+    # Custom drop logic goes here.
     return bool(True)
-
-def insert(thePlayer,  noun):
-    if noun == "coin" and thePlayer.currentRoom == "Cafeteria" and items['coin'].location == "Player" and items['candy'].location == "In machine":
-        items['coin'].location = "In machine"
-        items['candy'].location = "Cafeteria"
-        outputText("The machine takes the coin and despenses a candy.")
-    elif items['candy'].locaiton != "In machine":
-        outputText("There is no more candy in the vending machine.")
-    else:
-        outputText("You can't do that.")
 
 def bang(thePlayer,  noun):
     if thePlayer.currentRoom == "Bottom of the ladder" and noun == "pot":
@@ -108,91 +95,19 @@ def read(thePlayer,  noun):
             outputText("You don't have it.")
     else:
         outputText("You can't read that.")
-
-def kick(thePlayer,  noun):
-    if noun in ["computer",  "mainframe"] and thePlayer.currentRoom == "Computer room":
-        items["computer"].kick(thePlayer,  noun)
-    else:
-        outputText("What did that ever do to you?")
-
-def type(thePlayer,  noun):
-    if thePlayer.currentRoom == "Computer room":
-        items["computer"].type(thePlayer,  noun)
-    else:
-       outputText("You can't type on that.")
-        
+     
 def fix(thePlayer,  noun):
     if thePlayer.currentRoom == "Mine elevator" and noun == "elevator" and items["cog"].location == "Player":
          items["cog"].location = "elevator"
          outputText("You fix the elevator with the cog.")
     else:
         outputText("You can't fix that.")
-           
-# This is the class for the mainframe computer in the adventure.
-class Computer(Item):
 
-    def __init__(self,  name,  description,  location,  details="There is nothing special about it.",  canTake="y"):
-       super().__init__(name,  description,  location,  details,  canTake)
-       self.condition = "off"
-       self.login = "no"
-       self.copied = "no"
-       
-    # This method handles all the kick commands for the computer.
-    def kick(self, thePlayer,  noun):
-        
-        # If the computer is off and the user kicks it it will start.
-        if self.condition == "off":
-            self.condition = "on"
-            outputText("The mainframe struggles but it finally powers up.")
-            outputText("A message appears on the screen, 'ENTER LOGIN NAME'")
-        
-        # if the computer is already running let the user know if they kick it a second time.
-        elif self.condition == "on":
-            outputText("What did this computer do to you?")
-            
-    # This method handles all the typing commands to the mainframe comouter.
-    def type(self, thePlayer,  noun):
-        
-        # Login to the mainframe. The computer must be running first however.
-        if noun == "road" and self.login == "no" and self.condition =="on":
-            self.login = "yes"
-            outputText("The computer respondes, 'Welcome you have logged in successfully.'")
-        
-        # Type dir to display the instructions.
-        elif noun == "dir" and self.login == "yes" and self.condition =="on":
-            outputText("The computer responds, 'type COPY to load adventure then type ADVEN to start it.'")
-        
-        # Copy the adventure game from the tape to the computer mainframe.
-        elif noun == "copy" and self.login == "yes" and self.condition == "on" and items["tape"].location == "Tape mount":
-            self.copied = "yes"
-            outputText("The tape spins and the computer displays, 'ADVEN loaded successfully.'")
-        
-        # Handle the tape is not mounted.
-        elif noun == "copy" and self.login == "yes" and self.condition == "on" and items["tape"].location != "Tape mount":
-            outputText("The computer displays, 'Error: no tape to copy'")
-        
-        # Win the game
-        elif noun == "adven" and self.login == "yes" and self.condition == "on" and self.copied == "yes":
-            outputText("The computer starts the adventure game. You have successfully completed this adventure game! Congratulations!!!")
-        
-        # if the computer is not on.
-        elif self.condition != "on":
-            outputText("The mainframe computer is not powered on.")
-        
-        # if the user is not logged into the computer. 
-        elif self.login != "no":
-            outputText("You are not logged on.")
-        
-        # if the user is already login and tries to again. 
-        elif noun == "road" and self.login == "yes":
-            outputText("You are already logged in.")
-
+# todo: this should work more like room init and should be in an init file.
 items['leaflet'] = Item("leaflet",  "An old leaflet",  "Cave entrance",  canTake="y")
 items['bats'] = Item("bats",  "A horde of bats",  "Bat cave room",  canTake="n")
-
-items['spoon'] = Item("spoon",  "A large mettle spoon",  "Kitchen") # needs to be in kitchen
-items['pot'] = Item("pot",  "An old mettle pot",  "In stove") # needs to be in stove
-
+items['spoon'] = Item("spoon",  "A large mettle spoon",  "Kitchen") 
+items['pot'] = Item("pot",  "An old mettle pot",  "In stove") 
 items['terminal'] = Item("terminal",  "An old broken computer terminal",  "Bat cave room",  details="It looks beyond repair.")
 items['cog'] = Item("cog",  "An old rusty cog",  "Under terminal")
 items['coal'] = Item("coal",  "A chunck of coal",  "Bottom of the mine elevator")

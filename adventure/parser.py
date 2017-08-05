@@ -29,8 +29,6 @@ def parse(command,  thePlayer):
          rooms[thePlayer.currentRoom].display(thePlayer)  
     elif verb == "examine" and noun != "":
         Item.examine(thePlayer,  noun)
-    elif verb == "insert" and noun != "":
-        insert(thePlayer,  noun)
     elif verb == "bang" and noun != "":
         bang(thePlayer,  noun)
     elif verb == "hit" and noun != "":
@@ -39,16 +37,10 @@ def parse(command,  thePlayer):
         open(thePlayer,  noun)    
     elif verb == "read" and noun != "":
         read(thePlayer,  noun)
-    elif verb == "kick" and noun != "":
-        kick(thePlayer,  noun)
     elif verb == "put" and noun != "":
         put(thePlayer,  noun)
     elif verb == "fix" and noun != "":
         fix(thePlayer,  noun)
-    elif verb == "eat" and noun != "":
-        pass
-    elif verb == "start" and noun != "":
-        pass
     else:
         print("I don't understand.\n")
 

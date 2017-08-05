@@ -48,7 +48,7 @@ def goHandler(thePlayer,  direction):
 
 
 
-roomData = [
+roomData = [ # todo: this need to go in an init file.
     ["Cave opening",  "You are in an open field standing in front of the month of a large cave just north of you.",  
             'Cave entrance', '', '', '', '', ''], 
     ["Cave entrance",  "You are in the entrance of a large cave system. A ladder leading down a dark hole in the floor of the cave.",  
