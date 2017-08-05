@@ -12,44 +12,11 @@ tests = [
     "take leaflet", 
     "read leaflet",
 
-    # temperary until these can go in the kitchen
-    # "take pot",
-    # "take spoon",
-
     "d",    # bottom of the ladder
     "e",    # bat cave room
     "l",    # cave opening
     "n",    # cave entrance
     "d",    # bottom of the ladder
-
-
-
-
-    # "s",    # Maze 1
-    # "e",    # bottom of the ladder
-    # "s",    # maze 1
-    # "n",    # maze 2
-    # "e",    # back to maze 1
-    # "s",    # maze 3
-    # "s",    # back to maze 1
-    # "n",    # maze 2
-    # "s",    # mine entrance
-
-    # "s",    # top of mine elevator
-    # "d",    # should fail since the elevator is broken
-    # "fix elevator",
-    # "d",    # bottom of the mine
-    # "take coal",
-    # "u",    # top of mine elevator
-    # "n",    # mine entrance
-
-    # "n",    # maze 2
-    # "w",    # maze 3
-    # "e",    # back to  maze 2
-    # "w",    # maze 3
-    # "w",    # maze 4
-    # "s",    # back to maze 3 
-    # "w",    # maze 4
 
     # to the kitchen
     "s",    # Maze 1

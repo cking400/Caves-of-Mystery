@@ -2,7 +2,7 @@ from adventure.item import *
 
 class Player:
     def __init__(self):
-        self.currentRoom = "Cave opening"
+        self.currentRoom = "Cave opening" # todo: this needs to go in a init file
 
     def inventory(self):
         haveStuff = bool(False)
