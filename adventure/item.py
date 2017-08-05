@@ -82,19 +82,23 @@ def open(thePlayer,  noun):
             items["pot"].location = "Kitchen"
             outputText("The stove opens and you find a pot.")
         elif items["coal"].location == "In stove":
-            items["dimond"].locaiton = "Kitchen"
+            items["dimond"].locaton = "Kitchen"
+            items["coal"].location = ""
             outputText("The stove opens and the coal is now a dimond! You have won!!! Congratulations!")
         else:
             outputText("The stove opens and nothing is in it.")
     else:
-        outputText("I don't understand.")
+        outputText("I don't understand.") # todo: make it so anything can go into stove
 
 def put(thePlayer, noun):
     if noun == "coal":
-        if items["coal"].locaiton == "Player":
+        if items["coal"].location == "Player":
             outputText("(in stove)")
-            item["coal"].locaiton = "In stove"
+            outputText("(close stove door)")
+            items["coal"].location = "In stove"
             outputText("The stove starts to shack and magic sparks fly and then stops.")
+    else:
+        outputText("I don't understand.") # todo: make it so anything can go into stove
 
 def read(thePlayer,  noun):
     if noun == "leaflet":
@@ -186,11 +190,12 @@ class Computer(Item):
 items['leaflet'] = Item("leaflet",  "An old leaflet",  "Cave entrance",  canTake="y")
 items['bats'] = Item("bats",  "A horde of bats",  "Bat cave room",  canTake="n")
 
-items['spoon'] = Item("spoon",  "A large mettle spoon",  "Cave entrance") # needs to be in kitchen
-items['pot'] = Item("pot",  "An old mettle pot",  "Cave entrance") # needs to be in stove
+items['spoon'] = Item("spoon",  "A large mettle spoon",  "Kitchen") # needs to be in kitchen
+items['pot'] = Item("pot",  "An old mettle pot",  "In stove") # needs to be in stove
 
 items['terminal'] = Item("terminal",  "An old broken computer terminal",  "Bat cave room",  details="It looks beyond repair.")
 items['cog'] = Item("cog",  "An old rusty cog",  "Under terminal")
 items['coal'] = Item("coal",  "A chunck of coal",  "Bottom of the mine elevator")
+items['dimond'] = Item("dimond",  "A large bright dimond",  "")
 items['stove'] = Item("stove",  "An old stove",  "Kitchen",  details="The lable on the stove says is Fizby Magic stove.",  canTake="y")
 
