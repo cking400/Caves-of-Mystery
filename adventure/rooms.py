@@ -64,25 +64,16 @@ roomData = [
     ["Maze 3", "This is a winding passage with exists to the south, east and west.", 
             '', 'Maze 1', 'Maze 2', 'Maze 4', '', ''], 
     ["Maze 4", "This is a winding passage with exists to the north and south.", 
-            '', 'Maze 3', '', '', '', ''], 
+            'Kitchen', 'Maze 3', '', '', '', ''], 
     ["Mine entrance", "You are in the entrance of an old abandoned mine. There is an elevator to the south and an entrance to the caves is north.", 
             'Maze 2', 'Mine elevator', '', '', '', ''], 
     ["Mine elevator", "You are in a rickity old mine elevator. You can go down in the elevator or north to the mine entrance.", 
             'Mine entrance', '', '', '', '', 'Bottom of the mine elevator'],
     ["Bottom of the mine elevator", "You are at the bottom of the mine. There is an elevator to go up.", 
         '', '', '', '', 'Mine elevator', ''], 
-
-
-
-    ["Landing", "You're at a landing on the stairs. There are exists to the east and west and stairs continue up and down.", '', '', 'Manufacturing room', 'Cafeteria', 'Landing on the third floor', 'Bottom of stairs'], 
-    ["Cafeteria", "You're in a cafeteria. There is an exist to the east.", '', '', 'Landing', '', '', ''], 
-    ["Manufacturing room", "Around you is a manufaturing area. The exist is to the west.", '', '', '', 'Landing', '', ''], 
-    ["Landing on the third floor", "You're on a landing at the third floor. You can up, down or east to exist.", '', '', 'Computer room', '', 'Top of stairs', 'Landing'], 
-    ["Computer room", "You are in a computer room. The exist is to the west.", '', '', '', 'Landing on the third floor', '', ''], 
-    ["Top of stairs", "You are at the top of the stairs. There is an exit to the north and east.", 'Inside clock tower', '', 'Long corridor', '', '', 'Landing on the third floor'], 
-    ["Long corridor", "You are in a long corridor going east and west.", '', '', 'East end of corridor', 'Top of stairs', '', ''], 
-    ["East end of corridor", "You'r are at the east end of the corridor.", '', '', '', 'Long corridor', '', ''], 
-    ["Inside clock tower", "You are in the clock tower. There is an exit to the south.", '', 'Top of stairs', '', '', '', ''], 
+    ["Kitchen", "This is a strange site to see in a cave labyrinth but you are standing in a kitchen. There is an exist to the east.", 
+        '', 'Maze 4', '', '', '', ''], 
+     
     ["empty", "", '', '', '', '', '', ''], 
     ["name", "description", 'n', 's', 'e', 'w', 'u', 'd']
 ]

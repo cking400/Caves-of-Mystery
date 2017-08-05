@@ -77,14 +77,24 @@ def bang(thePlayer,  noun):
         outputText("I don't understand.")
 
 def open(thePlayer,  noun):
-    if thePlayer.currentRoom == "East end of corridor" and (noun == "desk" or noun == "drawer"):
-        if items["manual"].location == "In desk":
-            items["manual"].location = "East end of corridor"
-            outputText("The desk drawer opens and you find a maunal.")
+    if thePlayer.currentRoom == "Kitchen" and (noun == "oven" or noun == "stove"):
+        if items["pot"].location == "In stove":
+            items["pot"].location = "Kitchen"
+            outputText("The stove opens and you find a pot.")
+        elif items["coal"].location == "In stove":
+            items["dimond"].locaiton = "Kitchen"
+            outputText("The stove opens and the coal is now a dimond! You have won!!! Congratulations!")
         else:
-            outputText("The desk drawer opens but nothing is in it.")
+            outputText("The stove opens and nothing is in it.")
     else:
         outputText("I don't understand.")
+
+def put(thePlayer, noun):
+    if noun == "coal":
+        if items["coal"].locaiton == "Player":
+            outputText("(in stove)")
+            item["coal"].locaiton = "In stove"
+            outputText("The stove starts to shack and magic sparks fly and then stops.")
 
 def read(thePlayer,  noun):
     if noun == "leaflet":
@@ -181,13 +191,6 @@ items['pot'] = Item("pot",  "An old mettle pot",  "Cave entrance") # needs to be
 
 items['terminal'] = Item("terminal",  "An old broken computer terminal",  "Bat cave room",  details="It looks beyond repair.")
 items['cog'] = Item("cog",  "An old rusty cog",  "Under terminal")
-
 items['coal'] = Item("coal",  "A chunck of coal",  "Bottom of the mine elevator")
+items['stove'] = Item("stove",  "An old stove",  "Kitchen",  details="The lable on the stove says is Fizby Magic stove.",  canTake="y")
 
-
-items['machine'] = Item("machine",  "A vending machine with candy",  "Cafeteria",  details="The label on the machine says to insert a coin.",  canTake="n")
-items['clock'] = Item("clock",  "The tower's clock works",  "Inside clock tower",  details="There is a large handle for winding the clock.",  canTake="n")
-items['desk'] = Item("desk",  "An old desk",  "East end of corridor",  details="The desk has a drawer.",  canTake="n")
-items['manual'] = Item("manual",  "A computer manual",  "In desk",  details="Something is written there.")
-items['computer'] = Computer("computer",  "An old mainframe computer",  "Computer room",  canTake="n")
-items['mount'] = Item("mount",  "An old mainframe computer tape mount",  "Computer room",  canTake="n")

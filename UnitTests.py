@@ -49,13 +49,17 @@ tests = [
     "u",    # top of mine elevator
     "n",    # mine entrance
 
-    # "n",    # maze 2
-    # "w",    # maze 3
-    # "e",    # maze 2
-    # "w",    # maze 3
-    # "w",    # maze 4
-    # "s",    # maze 3 
-    # "w",    # maze 4
+    "n",    # maze 2
+    "w",    # maze 3
+    "e",    # maze 2
+    "w",    # maze 3
+    "w",    # maze 4
+    "s",    # maze 3 
+    "w",    # maze 4
+
+    "n",    # kitchen
+    "open stove",
+    # "take pot",
 
     "i"
 ]
