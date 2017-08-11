@@ -54,12 +54,21 @@ def dropHandler(thePlayer,  noun):
     return bool(True)
 
 def bang(thePlayer,  noun):
-    if thePlayer.currentRoom == "Bottom of the ladder" and noun == "pot":
-        if items["bats"].location == "Bat cave room":
-            items["bats"].location = "left cave"
-            outputText("Banging the pot makes a deafening noise and something flies past.")
+    if noun == "pot":
+        if items["pot"].location == "Player":
+            if items["spoon"].location == "Player":
+                if thePlayer.currentRoom == "Bottom of the ladder":
+                    if items["bats"].location == "Bat cave room":
+                        items["bats"].location = "left cave"
+                        outputText("Banging the pot makes a deafening noise and something flies past.")
+                    else:
+                        outputText("Banging the pot makes a lot of noise.")
+                else:
+                    outputText("You are making a lot of noise.")
+            else:
+                outputText("You don't have anything to hit the pot with. Your hand just makes a dull thud.")
         else:
-            outputText("Banging the pot makes a lot of noise.")
+            outputText("You don't have a pot.")
     else:
         outputText("I don't understand.")
 
