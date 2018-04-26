@@ -97,3 +97,7 @@ ENV/
 
 # mypy
 .mypy_cache/
+adventure/__pycache__/rooms.cpython-35.pyc
+adventure/__pycache__/item.cpython-35.pyc
+adventure/__pycache__/parser.cpython-35.pyc
+adventure/__pycache__/player.cpython-35.pyc
