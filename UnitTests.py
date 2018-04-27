@@ -4,6 +4,7 @@ from adventure.io import *
 from adventure.player import *
 from adventure.rooms import *
 from adventure.parser import *
+from adventure.init import *
 
 thePlayer = Player()
 

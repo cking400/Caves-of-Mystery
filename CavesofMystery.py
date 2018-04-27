@@ -1,9 +1,10 @@
-""" Tower of Mystery main file. """
+""" Caves of Mystery main file. """
 
 from adventure.io import readCommand
 from adventure.player import Player
 from adventure.rooms import *
 from adventure.parser import *
+from adventure.init import *
 
 thePlayer = Player()
 
