@@ -68,7 +68,8 @@ tests = [
     "put coal",
     "open stove",
 
-    "i"
+    "i",
+    "l"
 ]
 
 rooms[thePlayer.currentRoom].display(thePlayer)

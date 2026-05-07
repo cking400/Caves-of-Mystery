@@ -101,7 +101,7 @@ def open(thePlayer,  noun):
             items["pot"].location = "Kitchen"
             outputText("The stove opens and you find a pot.")
         elif items["coal"].location == "In stove":
-            items["dimond"].locaton = "Kitchen"
+            items["diamond"].location = "Kitchen"
             items["coal"].location = ""
             outputText("The stove opens and the coal is now a dimond! You have won!!! Congratulations!")
         else:
@@ -136,6 +136,7 @@ def fix(thePlayer,  noun):
         outputText("You can't fix that.")
 
 # todo: this should work more like room init and should be in an init file.
+
 items['leaflet'] = Item("leaflet",  "An old leaflet",  "Cave entrance",  canTake="y")
 items['bats'] = Item("bats",  "A horde of bats",  "Bat cave room",  canTake="n")
 items['spoon'] = Item("spoon",  "A large mettle spoon",  "Kitchen") 
@@ -143,6 +144,6 @@ items['pot'] = Item("pot",  "An old mettle pot",  "In stove")
 items['terminal'] = Item("terminal",  "An old broken computer terminal",  "Bat cave room",  details="It looks beyond repair.")
 items['cog'] = Item("cog",  "An old rusty cog",  "Under terminal") 
 items['coal'] = Item("coal",  "A chunk of coal",  "Bottom of the mine elevator")
-items['dimond'] = Item("dimond",  "A large bright dimond",  "")
+items['diamond'] = Item("diamond",  "A large bright diamond",  "")
 items['stove'] = Item("stove",  "An old stove",  "Kitchen",  details="The lable on the stove says is Fizby Magic stove.",  canTake="y")
 
