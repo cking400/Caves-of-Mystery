@@ -1,7 +1,8 @@
 // Place your settings in this file to overwrite default and user settings.
 {
     "python.linting.enabled": false,
-    "editor.fontSize": 14
+    "editor.fontSize": 14,
+    "python.pythonPath": "/usr/local/bin/python3"
     
         
 }
