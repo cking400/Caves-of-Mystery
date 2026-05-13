@@ -1,26 +1,23 @@
-""" Caves of Mystery main file. """
+""" Caves of Mystery - main entry point. """
 
 from adventure.io import readCommand
 from adventure.player import Player
-from adventure.rooms import *
-from adventure.parser import *
-from adventure.init import *
+from adventure.rooms import rooms
+from adventure.parser import parse
+import adventure.init  # noqa: F401 - populates rooms and items dicts
 
-thePlayer = Player()
 
-""" main function handles the main loop of the game system. """
 def main():
-
+    thePlayer = Player()
     rooms[thePlayer.currentRoom].display(thePlayer)
-    
-    hasQuit = bool(False)
 
+    hasQuit = False
     while not hasQuit:
         command = readCommand("> ")
-        hasQuit = parse(command,  thePlayer)
+        hasQuit = parse(command, thePlayer)
 
-    print("Good bye!!")
-    
-# Start main function.
+    print("Good bye!")
+
+
 if __name__ == "__main__":
     main()

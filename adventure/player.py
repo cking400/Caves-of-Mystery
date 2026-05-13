@@ -1,18 +1,18 @@
-from adventure.item import *
+from adventure.io import outputText
+from adventure.item import items
 
 class Player:
     def __init__(self):
-        self.currentRoom = "Cave opening" # todo: this needs to go in a init file
+        self.currentRoom = "Cave opening"
 
     def inventory(self):
-        haveStuff = bool(False)
-        displayString = "You are carrying: \n"
+        have_stuff = False
+        display_string = "You are carrying: \n"
         for k in list(items.keys()):
             if items[k].location == "Player":
-                displayString = displayString + items[k].name +"\n"
-                haveStuff = bool(True)
-        if haveStuff:
-            outputText(displayString)
+                display_string = display_string + items[k].name + "\n"
+                have_stuff = True
+        if have_stuff:
+            outputText(display_string)
         else:
             outputText("You don't have anything.")
-        
