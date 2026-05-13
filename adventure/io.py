@@ -1,7 +1,5 @@
-def outputText(str):
-    print(str)
-    
-def readCommand(str):
-    return input(str)
-    
-    
+def outputText(text):
+    print(text)
+
+def readCommand(prompt):
+    return input(prompt)
